@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+}
+.main {
+  background-color: rgba(240, 248, 255, 0.452);
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 1rem;
+}

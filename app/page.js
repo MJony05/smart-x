@@ -1,4 +1,4 @@
-import UserList from './components/UserList';
+import UserTable from './components/UserTable';
 import { GetStudentsData } from './service/database';
 import styles from './page.module.css';
 import Link from 'next/link';
@@ -7,12 +7,12 @@ export default async function Home() {
 
   return (
     <>
-      <navbar className={styles.nav}>
+      <nav className={styles.nav}>
         <Link href="/">Logo</Link>
         <Link href="/about">Biz haqimizda</Link>
-      </navbar>
+      </nav>
       <main className={styles.main}>
-        <UserList users={users} />
+        <UserTable users={users} />
       </main>
     </>
   );

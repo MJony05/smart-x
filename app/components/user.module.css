@@ -18,7 +18,7 @@
 .li {
   padding: 0.5rem 1rem;
   display: grid;
-  grid-template-columns: max-content 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.4fr 2fr 2fr 2fr 2fr;
   align-items: center;
   text-align: center;
 }
@@ -31,4 +31,25 @@
 }
 .li:nth-child(2n) {
   background-color: #f2f2f2;
+}
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  background-color: rgba(197, 197, 197, 0.597);
+  position: relative;
+}
+.status span {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  z-index: 1;
+}
+.status p {
+  font-size: 14px;
+  font-weight: 600;
 }

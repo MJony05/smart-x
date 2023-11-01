@@ -8,9 +8,11 @@ const UserList = ({ users }) => {
       {users.map((user, i) => (
         <li
           key={user.id}
-          style={{ backgroundColor: i % 2 === 0 ? 'white' : 'inherit' }}
+          style={{
+            backgroundColor: i % 2 === 0 ? 'white' : 'inherit',
+          }}
         >
-          <UserItem user={user} />
+          <UserItem user={user} index={i} />
         </li>
       ))}
     </>

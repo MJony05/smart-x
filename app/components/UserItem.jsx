@@ -3,7 +3,7 @@ import styles from './user.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const UserItem = ({ user }) => {
+const UserItem = ({ user, index }) => {
   const imageSrc = `data:image/jpeg;base64,${user.profile_picture}`; // Change 'jpeg' to the appropriate image format
   function getColor(percentage) {
     if (percentage <= 20) {
@@ -19,6 +19,7 @@ const UserItem = ({ user }) => {
     }
   }
   const percentage = ((user.steps * 100) / 310).toFixed(2);
+
   return (
     <Link
       style={{ textDecoration: 'none', color: 'black' }}
@@ -32,10 +33,31 @@ const UserItem = ({ user }) => {
         width="50"
         height="50"
       />
-      <p>{user.full_name}</p>
-      <p>{user.viloyat}</p>
-      <p>{user.steps}</p>
-      <div className={styles.status}>
+      <p
+        style={{
+          color: index % 2 == 0 ? '#502B84' : 'white ',
+          fontWeight: 'bold',
+        }}
+      >
+        {user.full_name}
+      </p>
+      <p
+        style={{
+          color: index % 2 == 0 ? '#502B84' : 'white ',
+          fontWeight: 'bold',
+        }}
+      >
+        {user.viloyat}
+      </p>
+      <p
+        style={{
+          color: index % 2 == 0 ? '#502B84' : 'white ',
+          fontWeight: 'bold',
+        }}
+      >
+        {user.steps}
+      </p>
+      <div className={styles.status} style={{ margin: '0 auto' }}>
         <span
           style={{
             width: `${percentage}%`,

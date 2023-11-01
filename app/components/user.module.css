@@ -2,19 +2,26 @@
   border-radius: 1rem 1rem 0 0;
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem;
-  background-color: rgba(255, 255, 255, 0.723);
+  padding: 0 3rem;
+  background-color: #502b84;
+  color: white;
   margin-bottom: 1rem;
+  align-items: center;
+}
+.boxTop h3 {
+  font-size: 30px;
 }
 .ul {
   list-style: none;
-  padding: 0;
-  background-color: rgba(211, 211, 211, 0.975);
+  background-color: #502b84;
   width: 95%;
   border-radius: 1rem;
   margin: 0 auto;
+  padding: 0;
 }
-
+.pagination * {
+  color: white;
+}
 .li {
   padding: 0.5rem 1rem;
   display: grid;
@@ -30,8 +37,10 @@
   border-radius: 100%;
 }
 .li:nth-child(2n) {
-  background-color: #f2f2f2;
+  background-color: #f2f2f2c3;
+  color: white;
 }
+
 .status {
   display: flex;
   justify-content: center;

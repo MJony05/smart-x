@@ -1,16 +1,31 @@
+'use client';
+import { useState, useEffect } from 'react';
 import UserTable from './components/UserTable';
-import { GetStudentsData } from './service/database';
 import styles from './page.module.css';
 import Link from 'next/link';
-export default async function Home() {
-  const users = await GetStudentsData();
+import Image from 'next/image';
+
+export default function Home() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('/api/students');
+      const data = await res.json();
+      setUsers(data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <>
       <nav className={styles.nav}>
-        <Link href="/">Logo</Link>
-        <Link href="/about">Biz haqimizda</Link>
+        <Image alt="logo-x" src="/x-logo.png" width={70} height={70} />
+        <Link href="/about" className={styles.nav_link}>
+          Biz haqimizda
+        </Link>
       </nav>
+
       <main className={styles.main}>
         <UserTable users={users} />
       </main>

@@ -10,6 +10,8 @@ import {
 } from '@mui/material';
 import UserList from './UserList';
 import styles from './user.module.css';
+import Image from 'next/image';
+import { auto } from '@popperjs/core';
 
 const UserTable = ({ users }) => {
   const viloyatlar = [
@@ -46,12 +48,12 @@ const UserTable = ({ users }) => {
       setFilteredUsers(viloyatFilteredUsers);
       setPage(1);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [viloyat, users]);
 
   useEffect(() => {
     // Apply search filter
     if (search === '') {
-      console.log('search is empty');
       if (viloyat === '') {
         setFilteredUsers(users);
       } else {
@@ -77,6 +79,7 @@ const UserTable = ({ users }) => {
         setFilteredUsers(nameFilteredUsers);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search, users]);
 
   const handleViloyatChange = (event) => {
@@ -103,14 +106,19 @@ const UserTable = ({ users }) => {
   return (
     <div className={styles.box}>
       <div className={styles.boxTop}>
-        <h3>O&lsquo;quvchilar royxati</h3>
+        <h3>O&lsquo;quvchilar ro&lsquo;yxati</h3>
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <Pagination
+            className={styles.pagination}
             count={Math.ceil(filteredUsers.length / 10)}
             defaultPage={1}
             siblingCount={0}
             page={page}
             onChange={handleChange}
+            style={{
+              color: 'white',
+              backgroundColor: '#502B84',
+            }}
           />
           <FormControl size="small" sx={{ m: 1, minWidth: 120 }}>
             <Select
@@ -118,7 +126,13 @@ const UserTable = ({ users }) => {
               id="demo-simple-select-helper"
               value={viloyat}
               label="Viloyat"
+              style={{ color: 'white' }}
               onChange={handleViloyatChange}
+              InputProps={{
+                style: {
+                  color: 'white',
+                },
+              }}
             >
               <MenuItem value="">
                 <em>Barcha</em>
@@ -137,16 +151,38 @@ const UserTable = ({ users }) => {
             variant="standard"
             value={search}
             onChange={handleSearchByName}
+            style={{ color: 'white' }}
+            InputProps={{
+              style: {
+                color: 'white',
+              },
+            }}
+            InputLabelProps={{
+              style: {
+                color: 'white',
+              },
+            }}
           />
+        </div>
+        <div>
+          <Image alt="logo" src="/smart-logo.png" width={200} height={30} />
         </div>
       </div>
       <ul className={styles.ul}>
-        <li className={styles.li}>
+        <li className={styles.li} style={{ backgroundColor: 'inherit' }}>
           <p></p>
-          <p>Ism</p>
-          <p>Viloyat</p>
-          <p>Qadam</p>
-          <p>statistika</p>
+          <p style={{ color: 'white', fontWeight: 'bold', fontSize: '24px' }}>
+            Ism/Familiya
+          </p>
+          <p style={{ color: 'white', fontWeight: 'bold', fontSize: '24px' }}>
+            Viloyat
+          </p>
+          <p style={{ color: 'white', fontWeight: 'bold', fontSize: '24px' }}>
+            Qadam
+          </p>
+          <p style={{ color: 'white', fontWeight: 'bold', fontSize: '24px' }}>
+            Statistika
+          </p>
         </li>
         <UserList users={slicedUsers} />
       </ul>

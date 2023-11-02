@@ -20,14 +20,29 @@ export default function Home() {
   return (
     <>
       <nav className={styles.nav}>
-        <Image alt="logo-x" src="/x-logo.png" width={70} height={70} />
-        <div className={styles.links}>
-          <Link href="/course" className={styles.nav_link}>
-            Kurs haqida
-          </Link>
-          <Link href="/about" className={styles.nav_link}>
-            Biz haqimizda
-          </Link>
+        <div className={styles.navContent}>
+          <Image
+            className={styles.logoPhone}
+            alt="logo-x"
+            src="/x-logo.png"
+            width={60}
+            height={60}
+          />
+          <Image
+            className={styles.logoDesktop}
+            alt="logo-x"
+            src="/logo-desktop.png"
+            width={170}
+            height={60}
+          />
+          <div className={styles.links}>
+            <Link href="/course" className={styles.nav_link}>
+              310 qadam
+            </Link>
+            <Link href="/about" className={styles.nav_link}>
+              Biz haqimizda
+            </Link>
+          </div>
         </div>
       </nav>
 

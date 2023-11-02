@@ -1,6 +1,7 @@
+import './style.css';
 export default function About() {
   return (
-    <div>
+    <div className="main">
       <h1>Biz haqimizda</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam

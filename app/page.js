@@ -21,6 +21,9 @@ export default function Home() {
     <>
       <nav className={styles.nav}>
         <Image alt="logo-x" src="/x-logo.png" width={70} height={70} />
+        <Link href="/course" className={styles.nav_link}>
+          Kurs haqida
+        </Link>
         <Link href="/about" className={styles.nav_link}>
           Biz haqimizda
         </Link>

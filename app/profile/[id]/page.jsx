@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PieChart } from '@mui/x-charts/PieChart';
 const UserProfile = ({ params }) => {
+  console.log(params);
   // Fetch user data based on the 'id' parameter from your database or API
   // You can use the 'id' to query and display the user's profile
   // For example, if you are using posgresql
@@ -18,8 +19,7 @@ const UserProfile = ({ params }) => {
       setUser(...data);
     };
     getUser();
-  }, [id]);
-  console.log(user);
+  }, []);
   const squares = Array.from({ length: 310 }, (_, i) => i + 1);
   return (
     <div className="user-page">

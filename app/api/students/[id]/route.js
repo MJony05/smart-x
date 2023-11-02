@@ -2,7 +2,7 @@ import { pool } from '../../db';
 export async function GET(req) {
   const url = req.url;
   const id = url.split(':').pop();
-  const getUserByIdQuery = `SELECT * FROM confirmed_users WHERE id=${id}`;
+  const getUserByIdQuery = `SELECT * FROM confirmed_users WHERE chat_id=${id}`;
   const client = await pool.connect();
 
   try {

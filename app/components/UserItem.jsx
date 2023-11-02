@@ -23,7 +23,7 @@ const UserItem = ({ user, index }) => {
     <Link
       style={{ textDecoration: 'none', color: 'black' }}
       className={styles.li}
-      href={`/profile/${user.id}`}
+      href={`/profile/${user.chat_id}`}
     >
       <Image
         className={styles.avatarka}

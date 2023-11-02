@@ -15,19 +15,20 @@ import { auto } from '@popperjs/core';
 
 const UserTable = ({ users }) => {
   const viloyatlar = [
-    'Tashkent',
-    'Samarqand',
-    'Buxoro',
-    'Xorazm',
-    'Qashqadaryo',
-    'Surxondaryo',
-    'Jizzax',
-    'Sirdaryo',
-    'Navoiy',
-    'Andijon',
-    'Namangan',
-    'Fergana',
-    'Qoraqalpogiston',
+    'Toshkent viloyati',
+    'Toshkent shahri',
+    'Andijon viloyati',
+    "Farg'ona viloyati",
+    'Namangan viloyati',
+    'Sirdaryo viloyati',
+    'Jizzax viloyati',
+    'Surxondaryo viloyati',
+    'Qashqadaryo viloyati',
+    'Samarqand viloyati',
+    'Buxoro viloyati',
+    'Navoiy viloyati',
+    'Xorazm viloyati',
+    "Qoraqalpog'iston Respublikasi",
   ];
 
   const [search, setSearch] = useState('');
@@ -136,7 +137,7 @@ const UserTable = ({ users }) => {
         <li className={styles.tableNav} style={{ backgroundColor: 'inherit' }}>
           <p></p>
           <p className={styles.tableHeads}>Ism/Familiya</p>
-          <p className={styles.tableHeads}>Viloyat</p>
+          <p className={styles.tableHeads}>Manzil</p>
           <p
             className={styles.steps}
             style={{ color: 'white', fontWeight: 'bold', fontSize: '24px' }}

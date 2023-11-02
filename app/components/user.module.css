@@ -134,6 +134,9 @@
 .customInput:focus {
   border: 2px solid #efea46;
 }
+.userDatas {
+  font-weight: 600;
+}
 @media (max-width: 480px) {
   .boxTop {
     flex-direction: column;
@@ -177,5 +180,8 @@
   .customInput,
   .customSelect {
     font-size: 1rem;
+  }
+  .userDatas {
+    font-weight: 500;
   }
 }

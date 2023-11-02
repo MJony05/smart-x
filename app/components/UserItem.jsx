@@ -34,17 +34,17 @@ const UserItem = ({ user, index }) => {
         height="50"
       />
       <p
+        className={styles.userDatas}
         style={{
           color: index % 2 == 0 ? '#502B84' : 'white ',
-          fontWeight: 'bold',
         }}
       >
         {user.full_name}
       </p>
       <p
+        className={styles.userDatas}
         style={{
           color: index % 2 == 0 ? '#502B84' : 'white ',
-          fontWeight: 'bold',
         }}
       >
         {user.viloyat}

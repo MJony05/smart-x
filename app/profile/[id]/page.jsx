@@ -7,7 +7,9 @@ import Link from 'next/link';
 import { PieChart } from '@mui/x-charts/PieChart';
 const UserProfile = ({ params }) => {
   console.log(params);
-
+  // Fetch user data based on the 'id' parameter from your database or API
+  // You can use the 'id' to query and display the user's profile
+  // For example, if you are using posgresql
   const { id } = params;
   const [user, setUser] = React.useState(null);
   useEffect(() => {

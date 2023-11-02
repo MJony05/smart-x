@@ -13,7 +13,17 @@ import styles from './user.module.css';
 import Image from 'next/image';
 import { auto } from '@popperjs/core';
 
-const UserTable = ({ users }) => {
+const UserTable = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('/api/students');
+      const data = await res.json();
+      setUsers(data);
+    };
+    fetchData();
+  }, []);
   const viloyatlar = [
     'Toshkent viloyati',
     'Toshkent shahri',

@@ -19,7 +19,7 @@ const UserProfile = ({ params }) => {
       setUser(...data);
     };
     getUser();
-  }, []);
+  }, [id]);
   const squares = Array.from({ length: 310 }, (_, i) => i + 1);
   return (
     <div className="user-page">

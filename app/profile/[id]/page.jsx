@@ -43,30 +43,58 @@ const UserProfile = ({ params }) => {
           />
         </div>
         <div className="card-info">
-          <div className="card-info-name">
-            <h1>{user?.full_name}</h1>
-            <h3>{user?.viloyat}</h3>
+          <h1>{user?.full_name}</h1>
+          <h2>{user?.description}</h2>
+          <div className="info-item">
+            <Image
+              className="map-pin"
+              alt="map pin"
+              width={55}
+              height={55}
+              src={'/map-pin.png'}
+            />{' '}
+            <h3>
+              {' ' + user?.viloyat}, {user?.tuman}
+            </h3>
           </div>
-          <div className="card-info-steps">
-            <h2>{user?.steps}</h2>
-            <h3>Qadam</h3>
+          <div className="info-item">
+            <Image
+              className="map-pin"
+              alt="map pin"
+              width={55}
+              height={55}
+              src={'/school.png'}
+            />{' '}
+            <h3>{user?.maktab}</h3>
+          </div>
+          <div className="info-item">
+            <Image
+              className="map-pin"
+              alt="map pin"
+              width={55}
+              height={55}
+              src={'/blackboard.png'}
+            />{' '}
+            <h3>{user?.sinf}</h3>
           </div>
         </div>
         <div className="card-qadam">
-          <h3>310 qadam</h3>
           <div className="card-steps">
             {/* here should be 310 grey square and step number should green */}
             {squares.map((square) => (
               <div
                 key={square}
                 className={`square ${square < user?.steps ? 'highlight' : ''}`}
-              ></div>
+              >
+                <span className="tooltip">{square} qadam</span>
+              </div>
             ))}
           </div>
         </div>
 
         <div className="card-statistic">
           <PieChart
+            className="pie-chart"
             colors={['rgb(2, 189, 2)', '#f1f1f1']}
             series={[
               {
@@ -84,7 +112,8 @@ const UserProfile = ({ params }) => {
                 ],
               },
             ]}
-            width={500}
+            axisHighlight="band"
+            width={400}
             height={200}
           />
         </div>

@@ -8,6 +8,7 @@
   margin: 0 auto;
   align-items: center;
   gap: 0.5rem;
+  backdrop-filter: blur(5px);
 }
 .nav_link {
   text-decoration: none;

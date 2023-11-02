@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const UserItem = ({ user, index }) => {
-  const [percentage, setPercentage] = React.useState(0);
   const imageSrc = `data:image/jpeg;base64,${user.profile_picture}`; // Change 'jpeg' to the appropriate image format
   function getColor(percentage) {
     if (percentage <= 20) {
@@ -19,9 +18,6 @@ const UserItem = ({ user, index }) => {
       return '#44CE1B';
     }
   }
-  useEffect(() => {
-    setPercentage(((user.steps * 100) / 310).toFixed(2));
-  }, [user]);
 
   return (
     <Link
@@ -64,11 +60,13 @@ const UserItem = ({ user, index }) => {
       <div className={styles.status} style={{ margin: '0 auto' }}>
         <span
           style={{
-            width: `${percentage}%`,
-            backgroundColor: getColor(percentage),
+            width: `${((user?.steps * 100) / 310).toFixed(2)}%`,
+            backgroundColor: getColor(((user?.steps * 100) / 310).toFixed(2)),
           }}
         ></span>
-        <p style={{ zIndex: '11' }}>{percentage}%</p>
+        <p style={{ zIndex: '11' }}>
+          {((user?.steps * 100) / 310).toFixed(2)}%
+        </p>
       </div>
     </Link>
   );

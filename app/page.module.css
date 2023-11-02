@@ -1,10 +1,10 @@
 .nav {
   display: flex;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   justify-content: space-between;
   position: relative;
   z-index: 99;
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
   align-items: center;
   gap: 0.5rem;
@@ -17,6 +17,10 @@
   border-bottom: 2px solid white;
   text-align: center;
 }
+.links {
+  display: flex;
+  gap: 1rem;
+}
 .nav_link:hover {
   border-color: #502b84;
 }
@@ -28,4 +32,12 @@
   position: relative;
   z-index: 99;
   padding-bottom: 2rem;
+}
+@media (max-width: 400px) {
+  .nav_link {
+    font-size: 16px;
+  }
+  .links {
+    gap: 0.5rem;
+  }
 }

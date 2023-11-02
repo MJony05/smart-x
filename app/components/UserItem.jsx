@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './user.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const UserItem = ({ user, index }) => {
+  const [percentage, setPercentage] = React.useState(0);
   const imageSrc = `data:image/jpeg;base64,${user.profile_picture}`; // Change 'jpeg' to the appropriate image format
   function getColor(percentage) {
     if (percentage <= 20) {
@@ -18,7 +19,9 @@ const UserItem = ({ user, index }) => {
       return '#44CE1B';
     }
   }
-  const percentage = ((user.steps * 100) / 310).toFixed(2);
+  useEffect(() => {
+    setPercentage(((user.steps * 100) / 310).toFixed(2));
+  }, [user]);
 
   return (
     <Link

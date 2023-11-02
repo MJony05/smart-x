@@ -24,13 +24,13 @@ const UserProfile = ({ params }) => {
   return (
     <div className="user-page">
       <nav className="navbar">
-        <h1 className="navbar-name">{user?.full_name}</h1>
-        <div className="nav-logo">
-          <Image src="/smart-logo.png" width={200} height={30} alt="logo" />
-        </div>
         <Link href="/" className="link">
           &larr; Reytinga qaytish
         </Link>
+        <div className="nav-logo">
+          <Image src="/smart-logo.png" width={200} height={30} alt="logo" />
+        </div>
+        <h1 className="navbar-name">{user?.full_name}</h1>
       </nav>
       <div className="user-card">
         <div className="card-image">
@@ -84,7 +84,7 @@ const UserProfile = ({ params }) => {
             {squares.map((square) => (
               <div
                 key={square}
-                className={`square ${square < user?.steps ? 'highlight' : ''}`}
+                className={`square ${square <= user?.steps ? 'highlight' : ''}`}
               >
                 <span className="tooltip">{square} qadam</span>
               </div>

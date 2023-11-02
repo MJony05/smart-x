@@ -1,11 +1,19 @@
 .boxTop {
+  box-sizing: border-box;
   border-radius: 1rem 1rem 0 0;
   display: flex;
   justify-content: space-between;
-  padding: 0 3rem;
+  padding: 1rem 3rem;
   background-color: #502b84;
   color: white;
   margin-bottom: 1rem;
+  align-items: center;
+  align-items: center;
+}
+.middle {
+  display: flex;
+  padding: 0 3rem;
+  gap: 1rem;
   align-items: center;
 }
 .boxTop h3 {
@@ -18,6 +26,15 @@
   border-radius: 1rem;
   margin: 0 auto;
   padding: 0;
+}
+.pagination {
+  display: grid;
+  width: 100%;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  padding: 1rem 0;
 }
 .pagination * {
   color: white;
@@ -35,12 +52,19 @@
 
 .avatarka {
   border-radius: 100%;
+  object-fit: cover;
 }
 .li:nth-child(2n) {
   background-color: #f2f2f2c3;
   color: white;
 }
-
+.tableNav {
+  display: grid;
+  grid-template-columns: 0.4fr 2fr 2fr 2fr 2fr;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
 .status {
   display: flex;
   justify-content: center;
@@ -61,4 +85,97 @@
 .status p {
   font-size: 14px;
   font-weight: 600;
+}
+.customSelect {
+  font-size: 1.1rem;
+  display: block;
+  width: 50%;
+  padding: 0.5em;
+  border-radius: 5px;
+  background: #fff;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(-45deg, transparent 50%, gray 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  appearance: none;
+  outline: none;
+}
+
+.customSelect:focus {
+  border: 2px solid #efea46;
+}
+
+.customSelect option {
+  font-weight: normal;
+}
+.customInput {
+  font-size: 1.1rem;
+  display: block;
+  width: 50%;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  outline: none;
+}
+.customInput::after {
+  content: '&#128269;';
+  position: absolute;
+  right: 1em;
+  z-index: 11;
+}
+.tableHeads {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+}
+.customInput:focus {
+  border: 2px solid #efea46;
+}
+@media (max-width: 480px) {
+  .boxTop {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 0.3rem;
+  }
+  .boxTop h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    order: 2;
+  }
+  .topImage {
+    order: -1;
+    text-align: center;
+  }
+  .middle {
+    width: 100%;
+    padding: 0;
+    align-items: center;
+    gap: 0.5rem;
+    order: 2;
+  }
+
+  .li {
+    grid-template-columns: 0.4fr 2fr 2fr 2fr;
+    gap: 0.2rem;
+  }
+  .steps {
+    display: none;
+  }
+  .tableNav {
+    grid-template-columns: 1fr 2fr 2fr 2fr;
+  }
+  .tableNav p {
+    font-size: 0.8rem;
+  }
+  .status {
+    width: 70px;
+  }
+  .customInput,
+  .customSelect {
+    font-size: 1rem;
+  }
 }

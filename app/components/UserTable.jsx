@@ -107,85 +107,57 @@ const UserTable = ({ users }) => {
     <div className={styles.box}>
       <div className={styles.boxTop}>
         <h3>O&lsquo;quvchilar ro&lsquo;yxati</h3>
-        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <Pagination
-            className={styles.pagination}
-            count={Math.ceil(filteredUsers.length / 10)}
-            defaultPage={1}
-            siblingCount={0}
-            page={page}
-            onChange={handleChange}
-            style={{
-              color: 'white',
-              backgroundColor: '#502B84',
-            }}
-          />
-          <FormControl size="small" sx={{ m: 1, minWidth: 120 }}>
-            <Select
-              labelId="demo-simple-select-helper-label"
-              id="demo-simple-select-helper"
-              value={viloyat}
-              label="Viloyat"
-              style={{ color: 'white' }}
-              onChange={handleViloyatChange}
-              InputProps={{
-                style: {
-                  color: 'white',
-                },
-              }}
-            >
-              <MenuItem value="">
-                <em>Barcha</em>
-              </MenuItem>
-              {viloyatlar.map((viloyat) => (
-                <MenuItem key={viloyat} value={viloyat}>
-                  {viloyat}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          <TextField
-            size="small"
-            id="standard-basic"
-            label="Qidirish"
-            variant="standard"
+        <div className={styles.middle}>
+          <select
+            className={styles.customSelect}
+            value={viloyat}
+            onChange={handleViloyatChange}
+          >
+            <option value="">Barcha</option>
+            {viloyatlar.map((viloyat) => (
+              <option key={viloyat} value={viloyat}>
+                {viloyat}
+              </option>
+            ))}
+          </select>
+          <input
+            type="text"
+            className={styles.customInput}
+            placeholder="Qidirish"
             value={search}
             onChange={handleSearchByName}
-            style={{ color: 'white' }}
-            InputProps={{
-              style: {
-                color: 'white',
-              },
-            }}
-            InputLabelProps={{
-              style: {
-                color: 'white',
-              },
-            }}
           />
         </div>
-        <div>
+        <div className={styles.topImage}>
           <Image alt="logo" src="/smart-logo.png" width={200} height={30} />
         </div>
       </div>
       <ul className={styles.ul}>
-        <li className={styles.li} style={{ backgroundColor: 'inherit' }}>
+        <li className={styles.tableNav} style={{ backgroundColor: 'inherit' }}>
           <p></p>
-          <p style={{ color: 'white', fontWeight: 'bold', fontSize: '24px' }}>
-            Ism/Familiya
-          </p>
-          <p style={{ color: 'white', fontWeight: 'bold', fontSize: '24px' }}>
-            Viloyat
-          </p>
-          <p style={{ color: 'white', fontWeight: 'bold', fontSize: '24px' }}>
+          <p className={styles.tableHeads}>Ism/Familiya</p>
+          <p className={styles.tableHeads}>Viloyat</p>
+          <p
+            className={styles.steps}
+            style={{ color: 'white', fontWeight: 'bold', fontSize: '24px' }}
+          >
             Qadam
           </p>
-          <p style={{ color: 'white', fontWeight: 'bold', fontSize: '24px' }}>
-            Statistika
-          </p>
+          <p className={styles.tableHeads}>Statistika</p>
         </li>
         <UserList users={slicedUsers} />
       </ul>
+      <Pagination
+        className={styles.pagination}
+        count={Math.ceil(filteredUsers.length / 10)}
+        defaultPage={1}
+        siblingCount={1}
+        page={page}
+        onChange={handleChange}
+        style={{
+          color: 'white',
+        }}
+      />
     </div>
   );
 };

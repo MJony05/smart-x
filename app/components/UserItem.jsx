@@ -50,6 +50,7 @@ const UserItem = ({ user, index }) => {
         {user.viloyat}
       </p>
       <p
+        className={styles.steps}
         style={{
           color: index % 2 == 0 ? '#502B84' : 'white ',
           fontWeight: 'bold',

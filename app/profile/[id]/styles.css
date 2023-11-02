@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+.user-page {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  background-color: #502b84d7;
+  padding: 1rem 4rem;
+  align-items: center;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+.nav-logo {
+  display: flex;
+  justify-content: center;
+}
+.navbar-name {
+  font-family: 'Courgette', cursive;
+}
+.navbar .link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 1rem;
+}
+.user-card {
+  display: grid;
+  width: 85%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: #502b84d7;
+
+  justify-content: center;
+  justify-items: center;
+  color: white;
+  padding: 2rem;
+  margin: 1rem auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.card-image {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.card-image img {
+  border-radius: 50%;
+}
+.card-qadam {
+  text-align: center;
+}
+.card-steps {
+  display: grid;
+  grid-template-columns: repeat(
+    25,
+    min-content
+  ); /* Adjust this to change the number of squares per row */
+  gap: 5px;
+}
+
+.square {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(205, 205, 205);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  border-radius: 1px;
+}
+
+.highlight {
+  background-color: rgb(2, 189, 2);
+}

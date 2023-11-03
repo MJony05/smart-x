@@ -1,29 +1,42 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import {
-  FormControl,
-  MenuItem,
-  Pagination,
-  Select,
-  TablePagination,
-  TextField,
-} from '@mui/material';
+import { Pagination } from '@mui/material';
 import UserList from './UserList';
 import styles from './user.module.css';
 import Image from 'next/image';
-import { auto } from '@popperjs/core';
 
 const UserTable = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('/api/students');
-      const data = await res.json();
-      setUsers(data);
+      try {
+        const res = await fetch('/api/students', {
+          method: 'GET',
+          headers: {
+            'Cache-Control': 'no-cache',
+          },
+        });
+        const data = await res.json();
+        setUsers(data);
+        setPage(1); // Reset pagination when data is updated
+      } catch (error) {
+        // Handle error
+      }
     };
-    fetchData();
+
+    fetchData(); // Fetch data immediately
+
+    const intervalId = setInterval(fetchData, 5000); // Fetch data every 5 seconds
+
+    return () => clearInterval(intervalId); // Cleanup function
   }, []);
+
+  // Log the updated users state when it changes
+  useEffect(() => {
+    console.log('Updated users:', users);
+  }, [users]);
+
   const viloyatlar = [
     'Toshkent viloyati',
     'Toshkent shahri',

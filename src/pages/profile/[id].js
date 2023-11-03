@@ -36,7 +36,11 @@ const UserProfile = () => {
       0: { color: 'rgb(2, 189, 2)' },
       1: { color: '#f1f1f1' },
     },
-    colors: ['#111'],
+    is3D: true,
+    pieSliceTextStyle: {
+      color: 'black',
+      fontSize: 16,
+    },
   };
   return (
     <div className="user-page">

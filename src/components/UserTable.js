@@ -1,4 +1,3 @@
-'use client';
 import React, { useState, useEffect } from 'react';
 import { Pagination } from '@mui/material';
 import UserList from './UserList';
@@ -9,33 +8,12 @@ const UserTable = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/students', {
-          method: 'GET',
-          headers: {
-            'Cache-Control': 'no-cache',
-          },
-        });
-        const data = await res.json();
-        setUsers(data);
-        setPage(1); // Reset pagination when data is updated
-      } catch (error) {
-        // Handle error
-      }
-    };
-
-    fetchData(); // Fetch data immediately
-
-    const intervalId = setInterval(fetchData, 5000); // Fetch data every 5 seconds
-
-    return () => clearInterval(intervalId); // Cleanup function
+    // Fetch data from the API endpoint
+    fetch('/api/getusers')
+      .then((response) => response.json())
+      .then((data) => setUsers(data))
+      .catch((error) => console.error(error));
   }, []);
-
-  // Log the updated users state when it changes
-  useEffect(() => {
-    console.log('Updated users:', users);
-  }, [users]);
 
   const viloyatlar = [
     'Toshkent viloyati',

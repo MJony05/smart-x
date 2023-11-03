@@ -1,41 +1,43 @@
-import UserTable from './components/UserTable';
-import styles from './page.module.css';
+// pages/index.js
 import Link from 'next/link';
+import UserTable from '../components/UserTable';
 import Image from 'next/image';
 
-export default function Home() {
+function HomePage() {
   return (
     <>
-      <nav className={styles.nav}>
-        <div className={styles.navContent}>
+      <nav className={'nav'}>
+        <div className={'navContent'}>
           <Image
-            className={styles.logoPhone}
+            className={'logoPhone'}
             alt="logo-x"
             src="/x-logo.png"
             width={60}
             height={60}
           />
           <Image
-            className={styles.logoDesktop}
+            className={'logoDesktop'}
             alt="logo-x"
             src="/logo-desktop.png"
             width={170}
             height={60}
           />
-          <div className={styles.links}>
-            <Link href="/course" className={styles.nav_link}>
+          <div className={'links'}>
+            <Link href="/course" className={'nav_link'}>
               310 qadam
             </Link>
-            <Link href="/about" className={styles.nav_link}>
+            <Link href="/about" className={'nav_link'}>
               Biz haqimizda
             </Link>
           </div>
         </div>
       </nav>
 
-      <main className={styles.main}>
+      <main className={'main'}>
         <UserTable />
       </main>
     </>
   );
 }
+
+export default HomePage;

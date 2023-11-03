@@ -1,26 +1,43 @@
-'use client';
 import React, { useEffect } from 'react';
-// import styles from '../user.module.css';
-import './styles.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { PieChart } from '@mui/x-charts/PieChart';
-const UserProfile = ({ params }) => {
-  console.log(params);
+import { useRouter } from 'next/router';
+import { Chart } from 'react-google-charts';
+
+const UserProfile = () => {
+  const router = useRouter();
   // Fetch user data based on the 'id' parameter from your database or API
   // You can use the 'id' to query and display the user's profile
   // For example, if you are using posgresql
-  const { id } = params;
+  // const { id } = params;
+  const id = router.query.id;
   const [user, setUser] = React.useState(null);
   useEffect(() => {
     const getUser = async () => {
-      const response = await fetch(`/api/students/:${id}`);
+      if (!id) return;
+      const response = await fetch(`/api/students/${id}`);
       const data = await response.json();
-      setUser(...data);
+      setUser(data[0]);
     };
     getUser();
   }, [id]);
   const squares = Array.from({ length: 310 }, (_, i) => i + 1);
+  const data = [
+    ['natija', 'qadam(in numbers)'],
+    ["Bosib o'tildi", user?.steps],
+    ['Marragacha', 310 - user?.steps],
+  ];
+  const options = {
+    legend: 'none',
+    pieSliceText: 'label',
+    // pieStartAngle: 100,
+    backgroundColor: 'transparent',
+    slices: {
+      0: { color: 'rgb(2, 189, 2)' },
+      1: { color: '#f1f1f1' },
+    },
+    colors: ['#111'],
+  };
   return (
     <div className="user-page">
       <nav className="navbar">
@@ -93,33 +110,41 @@ const UserProfile = ({ params }) => {
         </div>
 
         <div className="card-statistic">
-          <PieChart
-            className="pie-chart"
-            colors={['rgb(2, 189, 2)', '#f1f1f1']}
-            series={[
-              {
-                data: [
-                  {
-                    id: 0,
-                    value: (user?.steps * 100) / 310,
-                    label: 'Bosib otilgan ',
-                  },
-                  {
-                    id: 1,
-                    value: 100 - (user?.steps * 100) / 310,
-                    label: 'Marragacha',
-                  },
-                ],
-              },
-            ]}
-            axisHighlight="band"
-            width={400}
-            height={200}
+          <Chart
+            chartType="PieChart"
+            data={data}
+            options={options}
+            width={'100%'}
+            height={'400px'}
           />
         </div>
       </div>
     </div>
   );
 };
-
+{
+  /* <PieChart
+  className="pie-chart"
+  colors={['rgb(2, 189, 2)', '#f1f1f1']}
+  series={[
+    {
+      data: [
+        {
+          id: 0,
+          value: (user?.steps * 100) / 310,
+          label: 'Bosib otilgan ',
+        },
+        {
+          id: 1,
+          value: 100 - (user?.steps * 100) / 310,
+          label: 'Marragacha',
+        },
+      ],
+    },
+  ]}
+  axisHighlight="band"
+  width={400}
+  height={200}
+/>; */
+}
 export default UserProfile;

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Pagination } from '@mui/material';
+import { Pagination, Stack } from '@mui/material';
 import UserList from './UserList';
 import styles from './user.module.css';
 import Image from 'next/image';
+import Skeleton from '@mui/material/Skeleton';
 
 const UserTable = () => {
   const [users, setUsers] = useState([]);
@@ -103,6 +104,7 @@ const UserTable = () => {
   }, [search, viloyat]);
 
   useEffect(() => {
+    if (filteredUsers.length < 1) return setSlicedUsers([]);
     const slicedUsers = filteredUsers.slice((page - 1) * 10, page * 10);
     setSlicedUsers(slicedUsers);
   }, [page, filteredUsers]);
@@ -149,9 +151,23 @@ const UserTable = () => {
           <p className={styles.tableHeads}>Statistika</p>
         </li>
         {loading ? (
-          <div className={styles.loaderBox}>
-            <span className={styles.loader}></span>
-          </div>
+          <Stack spacing={1} width={'95%'} margin={'0 auto'}>
+            <Skeleton
+              variant="text"
+              height={100}
+              sx={{ bgcolor: '#fff', margin: '0 auto' }}
+            />
+            <Skeleton
+              variant="text"
+              height={100}
+              sx={{ bgcolor: '#fff', margin: '0 auto' }}
+            />
+            <Skeleton
+              variant="text"
+              height={100}
+              sx={{ bgcolor: '#fff', margin: '0 auto' }}
+            />
+          </Stack>
         ) : (
           <UserList users={slicedUsers} />
         )}

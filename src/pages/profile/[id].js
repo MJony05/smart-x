@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Chart } from 'react-google-charts';
-
+import Skeleton from '@mui/material/Skeleton';
 const UserProfile = () => {
   const router = useRouter();
   // Fetch user data based on the 'id' parameter from your database or API
@@ -12,12 +12,15 @@ const UserProfile = () => {
   // const { id } = params;
   const id = router.query.id;
   const [user, setUser] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
   useEffect(() => {
     const getUser = async () => {
       if (!id) return;
-      const response = await fetch(`/api/students/${id}`);
-      const data = await response.json();
-      setUser(data[0]);
+      fetch('/api/getusers')
+        .then((response) => response.json())
+        .then((data) => setUser(data[0]))
+        .catch((error) => console.error(error))
+        .finally(() => setLoading(false));
     };
     getUser();
   }, [id]);
@@ -51,20 +54,41 @@ const UserProfile = () => {
         <div className="nav-logo">
           <Image src="/smart-logo.png" width={200} height={30} alt="logo" />
         </div>
-        <h1 className="navbar-name">{user?.full_name}</h1>
+        <h1 className="navbar-name">&nbsp; {user?.full_name}</h1>
       </nav>
       <div className="user-card">
         <div className="card-image">
-          <Image
-            src={`data:image/jpeg;base64,${user?.profile_picture}`}
-            alt="User Profile"
-            width={300}
-            height={300}
-            priority={false}
-          />
+          {loading ? (
+            <Skeleton
+              variant="circular"
+              width="200px"
+              height="200px"
+              sx={{ bgcolor: 'rgba(255,255,255)' }}
+            />
+          ) : (
+            <Image
+              src={`data:image/jpeg;base64,${user?.profile_picture}`}
+              alt="User Profile"
+              width={300}
+              height={300}
+              priority={false}
+            />
+          )}
         </div>
         <div className="card-info">
-          <h1>{user?.full_name}</h1>
+          {loading ? (
+            <Skeleton
+              variant="text"
+              sx={{
+                width: '70%',
+                margin: '0 auto',
+                fontSize: '2rem',
+                bgcolor: 'rgba(255,255,255)',
+              }}
+            />
+          ) : (
+            <h1>{user?.full_name}</h1>
+          )}
           <h2>{user?.description}</h2>
           <div className="info-item">
             <Image
@@ -74,9 +98,20 @@ const UserProfile = () => {
               height={55}
               src={'/map-pin.png'}
             />{' '}
-            <h3>
-              {' ' + user?.viloyat}, {user?.tuman}
-            </h3>
+            {loading ? (
+              <Skeleton
+                variant="text"
+                width={200}
+                sx={{
+                  fontSize: '2rem',
+                  bgcolor: 'rgba(255,255,255)',
+                }}
+              />
+            ) : (
+              <h3>
+                {' ' + user?.viloyat}, {user?.tuman}
+              </h3>
+            )}
           </div>
           <div className="info-item">
             <Image
@@ -86,7 +121,18 @@ const UserProfile = () => {
               height={55}
               src={'/school.png'}
             />{' '}
-            <h3>{user?.maktab}</h3>
+            {loading ? (
+              <Skeleton
+                width={200}
+                variant="text"
+                sx={{
+                  fontSize: '2rem',
+                  bgcolor: 'rgba(255,255,255)',
+                }}
+              />
+            ) : (
+              <h3>{user?.maktab}</h3>
+            )}
           </div>
           <div className="info-item">
             <Image

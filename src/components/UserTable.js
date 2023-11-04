@@ -6,13 +6,14 @@ import Image from 'next/image';
 
 const UserTable = () => {
   const [users, setUsers] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     // Fetch data from the API endpoint
     fetch('/api/getusers')
       .then((response) => response.json())
       .then((data) => setUsers(data))
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
   }, []);
 
   const viloyatlar = [
@@ -147,7 +148,13 @@ const UserTable = () => {
           </p>
           <p className={styles.tableHeads}>Statistika</p>
         </li>
-        <UserList users={slicedUsers} />
+        {loading ? (
+          <div className={styles.loaderBox}>
+            <span className={styles.loader}></span>
+          </div>
+        ) : (
+          <UserList users={slicedUsers} />
+        )}
       </ul>
       <Pagination
         className={styles.pagination}

@@ -22,7 +22,6 @@ const UserProfile = () => {
         .catch((error) => console.error(error))
         .finally(() => setLoading(false));
     };
-    console.log('salom');
     getUser();
   }, [id]);
   const squares = Array.from({ length: 310 }, (_, i) => i + 1);
@@ -53,7 +52,13 @@ const UserProfile = () => {
           &larr; Reytinga qaytish
         </Link>
         <div className="nav-logo">
-          <Image src="/smart-logo.png" width={200} height={30} alt="logo" />
+          <Image
+            src="/smart-logo.png"
+            priority={true}
+            width={200}
+            height={30}
+            alt="logo"
+          />
         </div>
         <h1 className="navbar-name">&nbsp; {user?.full_name}</h1>
       </nav>

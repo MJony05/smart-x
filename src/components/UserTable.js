@@ -134,7 +134,13 @@ const UserTable = () => {
           />
         </div>
         <div className={styles.topImage}>
-          <Image alt="logo" src="/smart-logo.png" width={200} height={30} />
+          <Image
+            alt="logo"
+            src="/smart-logo.png"
+            priority={true}
+            width={200}
+            height={30}
+          />
         </div>
       </div>
       <ul className={styles.ul}>

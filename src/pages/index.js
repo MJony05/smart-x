@@ -18,6 +18,7 @@ function HomePage() {
           <Image
             className={'logoDesktop'}
             alt="logo-x"
+            priority={true}
             src="/logo-desktop.png"
             width={170}
             height={60}

@@ -16,12 +16,13 @@ const UserProfile = () => {
   useEffect(() => {
     const getUser = async () => {
       if (!id) return;
-      fetch('/api/getusers')
+      fetch(`/api/students/${id}`)
         .then((response) => response.json())
         .then((data) => setUser(data[0]))
         .catch((error) => console.error(error))
         .finally(() => setLoading(false));
     };
+    console.log('salom');
     getUser();
   }, [id]);
   const squares = Array.from({ length: 310 }, (_, i) => i + 1);

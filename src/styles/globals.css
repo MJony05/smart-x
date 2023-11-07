@@ -57,7 +57,7 @@ body {
 .logoDesktop {
   object-fit: contain;
 }
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   .nav {
     margin-bottom: 1rem;
   }
@@ -109,11 +109,12 @@ body {
   font-weight: 600;
   margin: 0 1rem;
 }
+/*********************************************** user page *************************/
 .user-card {
   display: grid;
   width: 85%;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: min-content min-content;
+  grid-template-rows: min-content;
   background-color: #502b84;
   gap: 2rem;
 
@@ -247,7 +248,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 450px) {
+@media (max-width: 1000px) {
   .user-card {
     width: 95%;
     display: flex;

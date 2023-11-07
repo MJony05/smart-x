@@ -2,10 +2,12 @@
 import Link from 'next/link';
 import UserTable from '../components/UserTable';
 import Image from 'next/image';
+import ParticlesComponent from '@/components/Particles';
 
 function HomePage() {
   return (
     <>
+      <ParticlesComponent />
       <nav className={'nav'}>
         <div className={'navContent'}>
           <Image

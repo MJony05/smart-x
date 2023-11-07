@@ -1,0 +1,45 @@
+.gameBoard {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.stepImageBox {
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stepImageBox span {
+  position: absolute;
+  bottom: 15px;
+  transform: translateX(13px);
+  color: white;
+  font-size: 15px;
+}
+.reverseImage {
+  transform: rotateY(180deg);
+}
+.map {
+  width: 90%;
+  margin: 0 auto;
+}
+.verticalImages {
+  position: absolute;
+  bottom: -30px;
+  rotate: 90deg;
+}

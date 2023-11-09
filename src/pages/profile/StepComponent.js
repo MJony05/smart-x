@@ -46,7 +46,7 @@ function StepProgress(props) {
                           width={130}
                           height={185}
                         />
-                        {step < completed && (
+                        {step <= completed && (
                           <Image
                             src="/checked.png"
                             alt="Completed"
@@ -160,7 +160,7 @@ function StepProgress(props) {
                           width={130}
                           height={185}
                         />
-                        {step < completed && (
+                        {step <= completed && (
                           <Image
                             src="/checked.png"
                             alt="Completed"
@@ -250,8 +250,8 @@ function StepProgress(props) {
                     className={styles.cupImageDesktop}
                     src={'/cup.png'}
                     alt="flag image"
-                    width={200}
-                    height={300}
+                    width={300}
+                    height={500}
                   />
                 </div>
               ) : (

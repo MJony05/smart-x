@@ -3,7 +3,10 @@ import Link from 'next/link';
 import UserTable from '../components/UserTable';
 import Image from 'next/image';
 import ParticlesComponent from '@/components/Particles';
-
+export const metadata = {
+  title: 'smart-x.uz',
+  description: 'smart-X kursi oquvchilari reytingi',
+};
 function HomePage() {
   return (
     <>

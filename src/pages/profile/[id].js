@@ -44,6 +44,7 @@ const UserProfile = () => {
       fontSize: 16,
     },
   };
+
   return (
     <div className="user-page">
       <nav className="navbar">
@@ -72,6 +73,7 @@ const UserProfile = () => {
             />
           ) : (
             <Image
+              className="user-image"
               src={`data:image/jpeg;base64,${user?.profile_picture}`}
               alt="User Profile"
               width={300}
@@ -79,6 +81,13 @@ const UserProfile = () => {
               priority={false}
             />
           )}
+          <Image
+            src="/location.png"
+            alt="direction"
+            className={styles.locationImage}
+            width={450}
+            height={50}
+          />
         </div>
         <div className="card-info">
           {loading ? (
@@ -173,9 +182,13 @@ const UserProfile = () => {
         </div> */}
       </div>
       <div className={styles.stepsMap}>
-        <h1 className="title">310 qadam xaritasi</h1>
+        <h1 className={styles.title}>Kelajak xaritasi</h1>
         <div className={styles.map}>
-          <StepProgress />
+          {user && user.steps !== undefined ? (
+            <StepProgress completed={user?.steps} />
+          ) : (
+            <Skeleton />
+          )}
         </div>
       </div>
     </div>

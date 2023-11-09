@@ -4,12 +4,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Chart } from 'react-google-charts';
 import Skeleton from '@mui/material/Skeleton';
+import StepProgress from './StepComponent';
+import styles from './step.module.css';
 const UserProfile = () => {
   const router = useRouter();
-  // Fetch user data based on the 'id' parameter from your database or API
-  // You can use the 'id' to query and display the user's profile
-  // For example, if you are using posgresql
-  // const { id } = params;
+
   const id = router.query.id;
   const [user, setUser] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
@@ -45,6 +44,7 @@ const UserProfile = () => {
       fontSize: 16,
     },
   };
+
   return (
     <div className="user-page">
       <nav className="navbar">
@@ -73,6 +73,7 @@ const UserProfile = () => {
             />
           ) : (
             <Image
+              className="user-image"
               src={`data:image/jpeg;base64,${user?.profile_picture}`}
               alt="User Profile"
               width={300}
@@ -80,6 +81,13 @@ const UserProfile = () => {
               priority={false}
             />
           )}
+          <Image
+            src="/location.png"
+            alt="direction"
+            className={styles.locationImage}
+            width={450}
+            height={50}
+          />
         </div>
         <div className="card-info">
           {loading ? (
@@ -151,9 +159,8 @@ const UserProfile = () => {
             <h3>{user?.sinf}</h3>
           </div>
         </div>
-        <div className="card-qadam">
+        {/* <div className="card-qadam">
           <div className="card-steps">
-            {/* here should be 310 grey square and step number should green */}
             {squares.map((square) => (
               <div
                 key={square}
@@ -163,9 +170,8 @@ const UserProfile = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="card-statistic">
+        </div> */}
+        {/* <div className="card-statistic">
           <Chart
             chartType="PieChart"
             data={data}
@@ -173,6 +179,16 @@ const UserProfile = () => {
             width={'100%'}
             height={'400px'}
           />
+        </div> */}
+      </div>
+      <div className={styles.stepsMap}>
+        <h1 className={styles.title}>Kelajak xaritasi</h1>
+        <div className={styles.map}>
+          {user && user.steps !== undefined ? (
+            <StepProgress completed={user?.steps} />
+          ) : (
+            <Skeleton />
+          )}
         </div>
       </div>
     </div>

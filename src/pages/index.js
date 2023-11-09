@@ -26,9 +26,6 @@ function HomePage() {
             height={60}
           />
           <div className={'links'}>
-            <Link href="/course" className={'nav_link'}>
-              310 qadam
-            </Link>
             <Link href="/about" className={'nav_link'}>
               Biz haqimizda
             </Link>

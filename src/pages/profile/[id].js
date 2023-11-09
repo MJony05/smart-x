@@ -86,7 +86,7 @@ const UserProfile = () => {
             alt="direction"
             className={styles.locationImage}
             width={450}
-            height={50}
+            height={100}
           />
         </div>
         <div className="card-info">

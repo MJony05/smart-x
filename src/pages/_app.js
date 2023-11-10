@@ -14,6 +14,7 @@ export default function App({ Component, pageProps }) {
         <title>smart-X</title>
         <link rel="shortcut icon" href="/x-logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
         <meta name="og:title" content={metadata.title} />
         <meta name="description" content={metadata.description} />
         <meta property="og:image" content="/x-logo.png" />

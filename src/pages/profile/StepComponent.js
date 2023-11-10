@@ -61,13 +61,13 @@ function StepProgress(props) {
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={40}
+                              width={55.6}
                               height={40}
                             />
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={40}
+                              width={55.6}
                               height={40}
                             />
                           </div>
@@ -77,13 +77,13 @@ function StepProgress(props) {
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={40}
+                              width={55.6}
                               height={40}
                             />
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={40}
+                              width={55.6}
                               height={40}
                             />
                           </div>
@@ -101,14 +101,14 @@ function StepProgress(props) {
                         <Image
                           src="/step.png"
                           alt="Step image"
-                          width={40}
+                          width={55.6}
                           height={40}
                           className={styles.topImage}
                         />
                         <Image
                           src="/step.png"
                           alt="Step image"
-                          width={40}
+                          width={55.6}
                           height={40}
                           className={styles.bottomImage}
                         />
@@ -175,13 +175,13 @@ function StepProgress(props) {
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={40}
+                              width={55.6}
                               height={40}
                             />
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={40}
+                              width={55.6}
                               height={40}
                             />
                           </div>
@@ -191,13 +191,13 @@ function StepProgress(props) {
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={40}
+                              width={55.6}
                               height={40}
                             />
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={40}
+                              width={55.6}
                               height={40}
                             />
                           </div>
@@ -215,21 +215,21 @@ function StepProgress(props) {
                         <Image
                           src="/step.png"
                           alt="Step image"
-                          width={40}
+                          width={55.6}
                           height={40}
                           className={styles.topImage}
                         />
                         <Image
                           src="/step.png"
                           alt="Step image"
-                          width={40}
+                          width={55.6}
                           height={40}
                           className={styles.bottomImage}
                         />
                         <Image
                           src="/step.png"
                           alt="Step image"
-                          width={40}
+                          width={55.6}
                           height={40}
                           className={styles.topImage}
                         />

@@ -56,7 +56,7 @@ const UserProfile = () => {
             <Image
               src="/smart-logo.png"
               priority={true}
-              width={200}
+              width={240}
               height={30}
               alt="logo"
             />

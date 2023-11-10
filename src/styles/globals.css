@@ -88,14 +88,17 @@ body {
   padding: 0;
   padding-bottom: 7rem;
 }
+.navbar-container {
+  background-color: #502b84;
+}
 .navbar {
   display: grid;
   grid-template-columns: max-content 1fr max-content;
-  background-color: #502b84;
-  padding: 1rem 4rem;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem 0;
   align-items: center;
   color: white;
-  backdrop-filter: blur(10px);
 }
 .nav-logo {
   display: flex;
@@ -114,8 +117,8 @@ body {
 /*********************************************** user page *************************/
 .user-card {
   display: grid;
-  width: 85%;
-  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  grid-template-columns: 0.7fr 1fr;
   grid-template-rows: min-content;
   background-color: #502b84;
   gap: 2rem;

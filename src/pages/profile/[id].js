@@ -47,21 +47,24 @@ const UserProfile = () => {
 
   return (
     <div className="user-page">
-      <nav className="navbar">
-        <Link href="/" className="link">
-          &larr; Reytinga qaytish
-        </Link>
-        <div className="nav-logo">
-          <Image
-            src="/smart-logo.png"
-            priority={true}
-            width={200}
-            height={30}
-            alt="logo"
-          />
-        </div>
-        <h1 className="navbar-name">&nbsp; {user?.full_name}</h1>
-      </nav>
+      <div className="navbar-container">
+        <nav className="navbar">
+          <Link href="/" className="link">
+            &larr; Reytinga qaytish
+          </Link>
+          <div className="nav-logo">
+            <Image
+              src="/smart-logo.png"
+              priority={true}
+              width={200}
+              height={30}
+              alt="logo"
+            />
+          </div>
+          <h1 className="navbar-name">&nbsp; {user?.full_name}</h1>
+        </nav>
+      </div>
+
       <div className="user-card">
         <div className="card-image">
           {loading ? (
@@ -103,7 +106,27 @@ const UserProfile = () => {
           ) : (
             <h1>{user?.full_name}</h1>
           )}
-          <h2>{user?.description}</h2>
+          <div className="info-item">
+            <Image
+              className="map-pin"
+              alt="map pin"
+              width={55}
+              height={55}
+              src={'/quotation.png'}
+            />{' '}
+            {loading ? (
+              <Skeleton
+                variant="text"
+                width={200}
+                sx={{
+                  fontSize: '2rem',
+                  bgcolor: 'rgba(255,255,255)',
+                }}
+              />
+            ) : (
+              <h3>{' ' + user?.description}</h3>
+            )}
+          </div>
           <div className="info-item">
             <Image
               className="map-pin"

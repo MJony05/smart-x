@@ -112,11 +112,11 @@
   margin-top: 100px;
 }
 .cupImage {
-  object-fit: cover;
-  display: block;
+  object-fit: contain;
 }
 .cupImageDesktop {
   object-fit: cover;
+  height: 100%;
 }
 .forPhone {
   display: none;

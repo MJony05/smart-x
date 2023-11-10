@@ -17,13 +17,6 @@ export default function App({ Component, pageProps }) {
         <meta name="og:title" content={metadata.title} />
         <meta name="description" content={metadata.description} />
         <meta property="og:image" content="/x-logo.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="twitter:creator" content="@smartxuz" />
-        <meta name="twitter:title" content={metadata.title} />
-        <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content="/x-logo.png" />
-        <meta name="twitter:image:alt" content={metadata.description} />
 
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
@@ -41,6 +34,7 @@ export default function App({ Component, pageProps }) {
           name="google-site-verification"
           content="QhQJzYpX7yY0QXZ1GnJ0X4z7uW6l6C7Xz7b6Zj2i0e4"
         />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <Component {...pageProps} />
     </>

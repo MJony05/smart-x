@@ -61,14 +61,14 @@ function StepProgress(props) {
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={55.6}
-                              height={40}
+                              width={40}
+                              height={28.7}
                             />
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={55.6}
-                              height={40}
+                              width={40}
+                              height={28.7}
                             />
                           </div>
                         )}
@@ -77,14 +77,14 @@ function StepProgress(props) {
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={55.6}
-                              height={40}
+                              width={40}
+                              height={28.7}
                             />
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={55.6}
-                              height={40}
+                              width={40}
+                              height={28.7}
                             />
                           </div>
                         )}
@@ -100,16 +100,18 @@ function StepProgress(props) {
                       >
                         <Image
                           src="/step.png"
+                          style={{ objectFit: 'contain' }}
                           alt="Step image"
-                          width={55.6}
-                          height={40}
+                          width={40}
+                          height={28.7}
                           className={styles.topImage}
                         />
                         <Image
                           src="/step.png"
+                          style={{ objectFit: 'contain' }}
                           alt="Step image"
-                          width={55.6}
-                          height={40}
+                          width={40}
+                          height={28.7}
                           className={styles.bottomImage}
                         />
                       </div>
@@ -175,14 +177,14 @@ function StepProgress(props) {
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={55.6}
-                              height={40}
+                              width={40}
+                              height={28.7}
                             />
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={55.6}
-                              height={40}
+                              width={40}
+                              height={28.7}
                             />
                           </div>
                         )}
@@ -191,14 +193,14 @@ function StepProgress(props) {
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={55.6}
-                              height={40}
+                              width={40}
+                              height={28.7}
                             />
                             <Image
                               src="/step.png"
                               alt="Step image"
-                              width={55.6}
-                              height={40}
+                              width={40}
+                              height={28.7}
                             />
                           </div>
                         )}
@@ -214,23 +216,26 @@ function StepProgress(props) {
                       >
                         <Image
                           src="/step.png"
+                          style={{ objectFit: 'contain' }}
                           alt="Step image"
-                          width={55.6}
-                          height={40}
+                          width={40}
+                          height={28.7}
                           className={styles.topImage}
                         />
                         <Image
                           src="/step.png"
+                          style={{ objectFit: 'contain' }}
                           alt="Step image"
-                          width={55.6}
-                          height={40}
+                          width={40}
+                          height={28.7}
                           className={styles.bottomImage}
                         />
                         <Image
                           src="/step.png"
+                          style={{ objectFit: 'contain' }}
                           alt="Step image"
-                          width={55.6}
-                          height={40}
+                          width={40}
+                          height={28.7}
                           className={styles.topImage}
                         />
                       </div>
@@ -251,7 +256,7 @@ function StepProgress(props) {
                     src={'/cup.png'}
                     alt="flag image"
                     width={300}
-                    height={500}
+                    height={600}
                   />
                 </div>
               ) : (
@@ -281,8 +286,8 @@ function StepProgress(props) {
 //     </div>
 //     {index < squares.length - 1 && (
 //       <>
-//         <Image src="/step.png" alt="Step image" width={20} height={20} />
-//         <Image src="/step.png" alt="Step image" width={20} height={20} />
+//         <Image src="/step.png" style={{objectFit:'cover'}} alt="Step image" width={20} height={20} />
+//         <Image src="/step.png" style={{objectFit:'cover'}} alt="Step image" width={20} height={20} />
 //       </>
 //     )}
 //   </React.Fragment>

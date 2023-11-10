@@ -27,18 +27,7 @@
   margin: 0 auto;
   padding: 0;
 }
-.pagination {
-  display: grid;
-  width: 100%;
-  flex-wrap: nowrap;
-  margin: 0 auto;
-  text-align: center;
-  justify-content: center;
-  padding: 1rem 0;
-}
-.pagination * {
-  color: white;
-}
+
 .li {
   padding: 0.5rem 1rem;
   display: grid;
@@ -136,6 +125,11 @@
 }
 .userDatas {
   font-weight: 600;
+}
+.paginationCont {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 @media (max-width: 400px) {
   /* .steps {

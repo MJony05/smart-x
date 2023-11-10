@@ -178,17 +178,16 @@ const UserTable = () => {
           <UserList users={slicedUsers} />
         )}
       </ul>
-      <Pagination
-        className={styles.pagination}
-        count={Math.ceil(filteredUsers.length / 10)}
-        defaultPage={1}
-        siblingCount={1}
-        page={page}
-        onChange={handleChange}
-        style={{
-          color: 'white',
-        }}
-      />
+      <div className={styles.paginationCont}>
+        <Pagination
+          count={Math.ceil(filteredUsers.length / 10)}
+          defaultPage={1}
+          siblingCount={1}
+          page={page}
+          onChange={handleChange}
+          color="primary"
+        />
+      </div>
     </div>
   );
 };

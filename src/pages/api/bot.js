@@ -26,6 +26,7 @@ export default async function handler(req, res) {
         }),
       }
     ).catch((error) => console.error(error));
+
     if (!response.ok) {
       console.error('Failed to send message to Telegram');
       res.status(500).end();

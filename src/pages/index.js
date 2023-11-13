@@ -74,7 +74,6 @@ function HomePage() {
       },
       body: JSON.stringify({ name, number }),
     });
-    console.log(response);
     if (!response.ok) {
       console.error('Failed to send data to bot');
       return;
@@ -134,17 +133,12 @@ function HomePage() {
                 id="standard-basic"
                 label="Telefon raqam"
                 variant="standard"
+                type="number"
                 value={number}
                 onChange={(e) => setNumber(e.target.value)}
                 required
               />
-              {/* <ColorButton
-                type="submit"
-                endIcon={<SendIcon />}
-                variant="contained"
-              >
-                Yuborish
-              </ColorButton> */}
+
               <LoadingButton
                 type="submit"
                 endIcon={<SendIcon />}

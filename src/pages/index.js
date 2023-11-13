@@ -76,7 +76,7 @@ function HomePage() {
     });
     console.log(response);
     if (!response.ok) {
-      console.error('Failed to send data to bot', response);
+      console.error('Failed to send data to bot');
       return;
     }
 

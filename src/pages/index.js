@@ -97,6 +97,7 @@ function HomePage() {
           open={state.open}
           onClose={handleCloseSnack}
           key={vertical + horizontal}
+          autoHideDuration={5000}
         >
           <Alert
             onClose={handleCloseSnack}

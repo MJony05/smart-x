@@ -74,9 +74,9 @@ function HomePage() {
       },
       body: JSON.stringify({ name, number }),
     });
-
+    console.log(response);
     if (!response.ok) {
-      console.error('Failed to send data to bot');
+      console.error('Failed to send data to bot', response);
       return;
     }
 

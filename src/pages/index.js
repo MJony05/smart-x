@@ -6,15 +6,9 @@ import UserTable from '../components/UserTable';
 import LoadingButton from '@mui/lab/LoadingButton';
 import Image from 'next/image';
 import ParticlesComponent from '@/components/Particles';
-import {
-  Alert,
-  Box,
-  Modal,
-  Snackbar,
-  TextField,
-  Typography,
-} from '@mui/material';
+import { Alert, Box, Modal, Snackbar, TextField } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
+import CloseIcon from '@mui/icons-material/Close';
 export const metadata = {
   title: 'smart-x.uz',
   description: 'smart-X kursi oquvchilari reytingi',
@@ -26,7 +20,7 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: {
     xs: '90%',
-    sm: 400,
+    sm: 500,
   },
   bgcolor: 'background.paper',
   border: '2px solid #502B84',
@@ -56,7 +50,7 @@ function HomePage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 5000); // 5000ms = 5s
+    }, 15000);
 
     // Cleanup function to clear the timeout if the component unmounts
     return () => clearTimeout(timer);
@@ -115,9 +109,16 @@ function HomePage() {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
-            <Typography id="modal-modal-title" variant="h5" component="h2">
-              Kursga buyurtma berish
-            </Typography>
+            <Box
+              display={'flex'}
+              justifyContent={'space-between'}
+              alignItems={'center'}
+            >
+              <h2>Kursga buyurtma berish</h2>
+              <h3 style={{ cursor: 'pointer' }} onClick={() => setOpen(false)}>
+                <CloseIcon />
+              </h3>
+            </Box>
             <form onSubmit={handleSubmit} className="popup-form">
               <TextField
                 id="standard-basic"
@@ -146,7 +147,10 @@ function HomePage() {
                 loading={loading}
                 loadingPosition="end"
                 variant="contained"
-                color="secondary"
+                style={{
+                  backgroundColor: '#502B84',
+                  marginTop: '1rem',
+                }}
               >
                 <span>Yuborish</span>
               </LoadingButton>

@@ -48,12 +48,16 @@ function HomePage() {
     setState({ ...newState, open: true });
   };
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setOpen(true);
-    }, 15000);
+    const hasRun = localStorage.getItem('hasRun');
+    if (!hasRun) {
+      const timer = setTimeout(() => {
+        setOpen(true);
+        console.log('This will run after 1 second!');
+        localStorage.setItem('hasRun', 'true');
+      }, 15000);
 
-    // Cleanup function to clear the timeout if the component unmounts
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    }
   }, []);
   const handleCloseSnack = () => {
     setState({ ...state, open: false });

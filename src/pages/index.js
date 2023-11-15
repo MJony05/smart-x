@@ -185,7 +185,7 @@ function HomePage() {
             </h1>
 
             <Link href="/about" className={'nav_link'}>
-              Biz haqimizda
+              Kurs haqida
             </Link>
           </div>
         </div>

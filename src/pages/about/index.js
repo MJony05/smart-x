@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import styles from './about.module.css';
 import TeamComponent from './TeamComponent';
+import CourseComponent from './CourseComponent';
 const data = [
   {
     id: 1,
@@ -43,6 +44,7 @@ const About = () => {
   return (
     <div className={styles.aboutPage}>
       <Navbar />
+      <CourseComponent />
       <TeamComponent data={data} />
     </div>
   );

@@ -31,7 +31,9 @@
   color: #502b84;
   display: inline-block;
 }
-
+.title span {
+  font-weight: 700;
+}
 .teamContent {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -73,6 +75,16 @@
   font-weight: 400;
   /* color: #502b84; */
 }
+
+.courseContent {
+  text-align: center;
+}
+
+.video {
+  aspect-ratio: 16 / 9;
+  width: 80%;
+}
+
 @media (max-width: 1000px) {
   .teamContainer {
     width: 90%;
@@ -99,5 +111,8 @@
   }
   .teamContent {
     width: 90%;
+  }
+  .video {
+    width: 95%;
   }
 }

@@ -9,7 +9,7 @@ const data = [
     name: 'Jonibek Munirov',
     position: 'Web Developer',
     image: '/jony.jpg',
-    quote: 'Consistensy is the key to success',
+    quote: 'Consistency is the key to success',
   },
   {
     id: 2,

@@ -23,7 +23,7 @@ const data = [
     name: 'Muxiddin Alisherov',
     position: 'Media Manager',
     image: '/pepe.jpg',
-    quote: 'Lorem ipsum dolor sit amet, ',
+    quote: 'Professionalism is not enough',
   },
   {
     id: 4,

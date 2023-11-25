@@ -123,7 +123,7 @@ function HomePage() {
                 <CloseIcon />
               </h3>
             </Box>
-            <form onSubmit={handleSubmit} className="popup-form">
+            {/* <form onSubmit={handleSubmit} className="popup-form">
               <TextField
                 id="standard-basic"
                 label="Ism Familiya"
@@ -158,7 +158,42 @@ function HomePage() {
               >
                 <span>Yuborish</span>
               </LoadingButton>
-            </form>
+            </form> */}
+            {/* hone */}
+            <h3 style={{ fontWeight: '400' }}>
+              S.M.A.R.T kursiga yozilish va buyurtma berish uchun quyidagi raqam
+              bilan bog&apos;laning:
+              <div
+                style={{
+                  margin: '1rem 0',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '10px',
+                }}
+              >
+                <Image
+                  src={'/work-from-home.png'}
+                  alt="operator"
+                  width={50}
+                  height={50}
+                />
+                <span
+                  style={{
+                    display: 'block',
+                    fontSize: '24px',
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    backgroundColor: '#502B84',
+                    color: '#fff',
+                    padding: '5px 10px',
+                    borderRadius: '5px',
+                  }}
+                >
+                  88-136-51-41
+                </span>
+              </div>
+            </h3>
           </Box>
         </Modal>
       </div>

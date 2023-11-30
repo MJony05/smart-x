@@ -10,7 +10,7 @@ export default async function handler(req, res) {
 
       const result = await client.query(getUsersQuery);
       const users = result.rows;
-
+      users.sort((a, b) => b.steps - a.steps);
       res.status(200).json(users);
     } catch (error) {
       console.error(error);

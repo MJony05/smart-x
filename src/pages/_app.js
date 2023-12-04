@@ -18,6 +18,7 @@ export default function App({ Component, pageProps }) {
         <meta name="og:title" content={metadata.title} />
         <meta name="description" content={metadata.description} />
         <meta property="og:image" content="/x-logo.png" />
+<script defer data-domain="smart-x.uz" src="https://plausible.io/js/script.js"></script>
 
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
